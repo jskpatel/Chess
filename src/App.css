@@ -1,0 +1,12 @@
+body {background-color: #000;}
+
+.board{border: 1px solid #000; width: 602px; height: 602px; margin: 50px auto; display: flex; flex-wrap: wrap;}
+.black{background-color: rgb(101, 129, 0);}
+.white{background-color: white;}
+.square{width: 75px; height: 75px; display: flex; justify-content: center; align-items: center;}
+
+.square:hover {border: 5px solid red;}
+.square.active {background-color:  red;}
+.emptySquare{border: 5px solid black;}
+
+
