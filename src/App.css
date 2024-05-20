@@ -7,6 +7,6 @@ body {background-color: #000;}
 
 .square:hover {border: 5px solid red;}
 .square.active {background-color:  red;}
-.emptySquare{border: 5px solid black;}
+.isEmpty{border: 5px solid black;}
 
 

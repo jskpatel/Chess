@@ -4,11 +4,9 @@ import { constant, setPieces } from "./logics";
 
 const Square = ({value}: SquareProps): ReactElement => {
 
-  const [activeSquare, setActiveSquare] = useState<number[] | null>(null)
   const [onFocus, setOnFocus] = useState(false)
   
-  const handleFocus = (code: number[]) => {
-    setActiveSquare(code)
+  const handleFocus = () => {
     setOnFocus(!onFocus)
 
     const act = document.querySelectorAll(".square");
@@ -16,10 +14,12 @@ const Square = ({value}: SquareProps): ReactElement => {
       if(ele.classList.contains('active')) ele.classList.remove('active')
     })
   }
-  console.log("==>", value)
 
   return (
-    <div className={`square ${(value[constant.zero]+value[constant.one]) % constant.two === constant.zero ? "black" : "white"} ${setPieces(value) && onFocus ? "active" : ""} ${activeSquare && !!setPieces(value) === false ? "emptySquare" : ""}`} onClick={() => handleFocus(value)}>
+    <div
+      className={`square ${(value[constant.zero]+value[constant.one]) % constant.two === constant.zero ? "black" : "white"} ${setPieces(value) && onFocus ? "active" : ""}`} 
+      onClick={() => handleFocus()}
+    >
       {setPieces(value) && <img src={setPieces(value)} />}
     </div>
   )
